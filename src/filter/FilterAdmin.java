@@ -23,7 +23,6 @@ public class FilterAdmin implements Filter {
         HttpSession httpSession = httpServletRequest.getSession();
         UserModel model = new UserModel();
         String username = (String) httpSession.getAttribute("loggedUser");
-        System.out.println(username);
 
         int role = 0;
         if (username != null)  role = model.finOne(username).getRole();

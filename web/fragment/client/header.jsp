@@ -1,52 +1,55 @@
 <header>
     <% String username = (String) request.getAttribute("loggedIn"); %>
 
-    <nav class="navbar navbar-dark navbar-expand-md bg-dark justify-content-between mb-5">
+    <nav class="navbar navbar-dark navbar-expand-md bg-dark mb-5">
         <div class="container">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">
-                <span class="navbar-toggler-icon"></span>
+            <% if (username != null) {%>
+            <button class="btn btn-primary navbar-btn" data-toggle="modal"
+                    data-target="#exampleModal">Feedback
             </button>
-            <div class="navbar-collapse collapse dual-nav w-50 order-1 order-md-0">
-                <ul class="navbar-nav">
-                    <% if (username != null) {%>
-                    <li class="nav-item active">
-                        <a  type="button" class="nav-link btn btn-primary" name="btn" data-toggle="modal"
-                           data-target="#exampleModal">
-                            Feedback
-                        </a>
-                    </li>
-                    <%}%>
-                </ul>
+            <%}%>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"> Assignment Java Web
+                </a>
             </div>
-            <a href="/" class="navbar-brand mx-auto d-block text-center order-0 order-md-1 w-25">Assignment Java Web</a>
-            <div class="navbar-collapse collapse dual-nav w-50 order-2">
-                <ul class="nav navbar-nav ml-auto">
-                    <% if (username != null) {%>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <%= (String) request.getAttribute("loggedIn")%>
-                        </a>
+            <ul class="nav navbar-nav float-right">
+                <% if (username != null) {%>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <%= (String) request.getAttribute("loggedIn")%>
+                    </a>
 
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a href="/logout" class="dropdown-item">logout</a>
-                        </div>
-                    </li>
-                    <%} else {%>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Account
-                        </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a href="/logout" class="dropdown-item">logout</a>
+                    </div>
+                </li>
+                <%} else {%>
+                <%--                    <li class="nav-item dropdown">--%>
+                <%--                        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"--%>
+                <%--                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--%>
+                <%--                            Account--%>
+                <%--                        </a>--%>
 
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a href="/login" class="dropdown-item">login</a>
-                            <a href="/user" class="dropdown-item">register</a>
-                        </div>
-                    </li>
-                    <%}%>
-                </ul>
-            </div>
+                <%--                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">--%>
+                <%--                            <a href="/login" class="dropdown-item">login</a>--%>
+                <%--                            <a href="/user" class="dropdown-item">register</a>--%>
+                <%--                        </div>--%>
+                <%--                    </li>--%>
+                <li class="nav-item dropdown">
+                    <a class="nav-link " href="/login">
+                        Login
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="/user">
+                        Register
+                    </a>
+                </li>
+                <%}%>
+            </ul>
+
+
 
         </div>
     </nav>

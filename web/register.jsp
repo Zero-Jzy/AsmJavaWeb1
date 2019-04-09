@@ -1,6 +1,7 @@
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="entity.User" %>
 <%--
   Created by IntelliJ IDEA.
   User: xuanhung
@@ -13,6 +14,10 @@
     HashMap<String,ArrayList<String>> errors =(HashMap<String, ArrayList<String>>) request.getAttribute("errors");
     if (errors == null){
         errors = new HashMap<>();
+    }
+    User user = (User) request.getAttribute("user");
+    if (user == null){
+        user = new User("","","");
     }
 
 %>
@@ -35,7 +40,7 @@
     <%}%>
 
     <form class="form-group" action="/user" method="post">
-        Username <input  class="form-control"  type="text" name="username" value="<%=user.getUsername()%>">
+        Username <input  class="form-control"  type="text" name="username" value="<%= user.getUsername()%>">
         <br>
         Password <input class="form-control" type="password" name="password">
         <br>

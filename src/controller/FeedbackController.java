@@ -34,8 +34,6 @@ public class FeedbackController extends HttpServlet {
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String id = req.getParameter("id");
-        System.out.println(id);
         if (model.apccept(req.getParameter("id"))){
             resp.getWriter().println("Accepted");
         }else {

@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,15 +29,19 @@ public class UserController extends HttpServlet {
         String fullName = req.getParameter("fullName");
 
         User user = new User(username, password, fullName);
-        if (!user.isValid()){
+        if (!user.isValid()) {
             HashMap<String, ArrayList<String>> errors = user.getErrors();
-            req.setAttribute("errors",errors);
-            req.setAttribute("user",user);
-            req.getRequestDispatcher("/register.jsp").forward(req,resp);
+            req.setAttribute("errors", errors);
+            req.setAttribute("user", user);
+            req.getRequestDispatcher("/register.jsp").forward(req, resp);
             return;
         }
         UserModel userModel = new UserModel();
-        userModel.insert(user);
+        if (userModel.insert(user)){
+            HttpSession session = req.getSession();
+            session.setAttribute("loggedUser", user.getUsername());
+            resp.sendRedirect("/");
+        }
 
     }
 

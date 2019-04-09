@@ -23,8 +23,6 @@
 <body>
 <jsp:include page="fragment/client/header.jsp"></jsp:include>
 
-<a class="h1" href="/admin">Admin</a>
-
 
 <div class="container">
     <% for (FeedBack feedBack: feedBacks) {%>

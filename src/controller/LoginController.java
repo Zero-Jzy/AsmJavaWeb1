@@ -2,6 +2,7 @@ package controller;
 
 import entity.User;
 import model.UserModel;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import java.io.IOException;
@@ -24,11 +25,11 @@ public class LoginController extends HttpServlet {
         User user = checkLogin(username, password);
         if (user != null) {
             HttpSession session = req.getSession();
-                session.setAttribute("loggedUser", user.getUsername());
+            session.setAttribute("loggedUser", user.getUsername());
             resp.sendRedirect("/");
         } else {
-            req.setAttribute("errors","Sai thông tin tài khoản.");
-            req.getRequestDispatcher("/login.jsp").forward(req,resp);
+            req.setAttribute("errors", "Sai thông tin tài khoản.");
+            req.getRequestDispatcher("/login.jsp").forward(req, resp);
         }
     }
 

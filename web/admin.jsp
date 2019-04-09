@@ -22,9 +22,8 @@
 </jsp:include>
 
 <body>
-<jsp:include page="fragment/client/header.jsp"></jsp:include>
+<jsp:include page="fragment/admin/header.jsp"></jsp:include>
 
-<div class="alert-dark">Đây là trang Amdin</div>
 
 <div class="container">
     <% for (FeedBack feedBack: feedBacks) {%>
@@ -55,7 +54,8 @@
             url: '/feedback?id=' + id,
             type: 'DELETE',
             success: function (result) {
-                alert(result)
+                alert(result);
+                location.reload()
             },
             error: function (err) {
                 alert(err)
@@ -68,7 +68,8 @@
             url: '/feedback?id=' + id,
             type: 'PUT',
             success: function (result) {
-                alert(result)
+                alert(result);
+                location.reload()
             },
             error: function (err) {
                 alert(err)
