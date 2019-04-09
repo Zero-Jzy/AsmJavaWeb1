@@ -31,7 +31,7 @@ public class FilterAdmin implements Filter {
             httpServletRequest.setAttribute("loggedIn", username);
             filterChain.doFilter(servletRequest, servletResponse);
         } else {
-            httpServletResponse.sendRedirect("/login");
+            httpServletResponse.sendError(HttpServletResponse.SC_FORBIDDEN);
         }
     }
 

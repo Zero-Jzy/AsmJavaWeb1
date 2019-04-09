@@ -29,8 +29,6 @@
 <jsp:include page="fragment/client/header.jsp"></jsp:include>
 
 <div class="content container">
-    <h1><%= (String) request.getAttribute("title") %>
-    </h1>
     <% for (Map.Entry<String, ArrayList<String>> e: errors.entrySet()) {%>
     <div class="alert alert-danger" role="alert">
         <%for (String err : e.getValue()){%>
