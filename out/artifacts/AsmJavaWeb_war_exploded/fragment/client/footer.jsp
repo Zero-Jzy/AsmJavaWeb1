@@ -1,3 +1,1 @@
-<div class="fixed-bottom bg-dark">
-    <p class="text-center"> alsjdlksajdlsajdohasdsakd</p>
-</div>
+<footer class="mt-4" style="height: 40px;"></footer>

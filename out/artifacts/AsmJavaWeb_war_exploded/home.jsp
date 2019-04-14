@@ -17,8 +17,6 @@
 <html>
 <jsp:include page="fragment/client/head.jsp">
     <jsp:param name="title" value="Home page"></jsp:param>
-    <jsp:param name="description" value="Mô tả"></jsp:param>
-    <jsp:param name="keywords" value="keyword1, keyword2"></jsp:param>
 </jsp:include>
 <body>
 <jsp:include page="fragment/client/header.jsp"></jsp:include>
@@ -28,12 +26,12 @@
     <% for (FeedBack feedBack: feedBacks) {%>
     <div class="card mb-4 shadow-sm">
         <div class="card-header">
-            <%= userModel.finOne(feedBack.getUsername()).getFullName()%>
+            <%= feedBack.getUser().getUserInfomation().getFullName()%>
         </div>
         <div class="card-body">
             <blockquote class="blockquote mb-0">
                 <p><%= feedBack.getContent()%></p>
-                <small class="float-right"><%= feedBack.getCreateAt()%></small>
+                <small class="float-right"><%= feedBack.getCreatedAt()%></small>
             </blockquote>
         </div>
     </div>

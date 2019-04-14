@@ -9,7 +9,7 @@
             </button>
             <%}%>
             <div class="navbar-header">
-                <a class="navbar-brand" href="#"> Assignment Java Web
+                <a class="navbar-brand" href="/home"> Assignment Java Web
                 </a>
             </div>
             <ul class="nav navbar-nav float-right">

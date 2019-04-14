@@ -4,11 +4,22 @@
     String title = request.getParameter("title");
 %>
 
+<%--<head>--%>
+<%--    <title><%= title%></title>--%>
+<%--    <meta charset="utf-8">--%>
+<%--    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>--%>
+<%--    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>--%>
+<%--    <link rel="stylesheet" href="/css/style.css">--%>
+<%--    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">--%>
+<%--</head>--%>
+
+
 <head>
-    <title><%= title%></title>
+    <title><%= title%>
+    </title>
     <meta charset="utf-8">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<%--    <link rel="stylesheet" href="../../css/style.css">--%>
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script type="text/javascript" src="lib/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>

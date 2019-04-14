@@ -4,7 +4,7 @@
     <nav class="navbar navbar-dark navbar-expand-md bg-info justify-content-between mb-5">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/"> Assignment Java Web
+                <a class="navbar-brand" href="/home"> Assignment Java Web
                 </a>
             </div>
             <ul class="nav navbar-nav float-right">

@@ -39,7 +39,7 @@
 
     <servlet-mapping>
         <servlet-name>HomeController</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/home</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -62,15 +62,13 @@
     </filter>
     <filter-mapping>
         <filter-name>AuthenticationFilter</filter-name>
-        <url-pattern>/</url-pattern>
-        <url-pattern>/feedback/*</url-pattern>
+        <url-pattern>/home</url-pattern>
     </filter-mapping>
 
     <servlet>
         <servlet-name>AdminComtroller</servlet-name>
         <servlet-class>controller.AminController</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>AdminComtroller</servlet-name>
         <url-pattern>/admin</url-pattern>
@@ -94,4 +92,5 @@
         <error-code>403</error-code>
         <location>/errors-403</location>
     </error-page>
+
 </web-app>

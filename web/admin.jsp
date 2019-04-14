@@ -17,8 +17,6 @@
 <html>
 <jsp:include page="fragment/client/head.jsp">
     <jsp:param name="title" value="Admin page"></jsp:param>
-    <jsp:param name="description" value="Mô tả"></jsp:param>
-    <jsp:param name="keywords" value="keyword1, keyword2"></jsp:param>
 </jsp:include>
 
 <body>
@@ -30,23 +28,26 @@
 
     <div class="card mb-4 shadow-sm">
         <div class="card-header">
-            <%= userModel.finOne(feedBack.getUsername()).getFullName()%>
+            <%= feedBack.getUser().getUserInfomation().getFullName()%>
             <div class="float-right">
-                <button class="btn btn-danger" onclick="doDelete(<%= feedBack.getId()%>)">delete</button>
+                <% if (feedBack.getStatus() != 1){%>
                 <button class="btn btn-primary" onclick="doPut(<%= String.valueOf(feedBack.getId())%>)">accept</button>
-
+                <%}%>
+                <button class="btn btn-danger" onclick="doDelete(<%= feedBack.getId()%>)">delete</button>
             </div>
         </div>
         <div class="card-body">
             <blockquote class="blockquote mb-0">
                 <p><%= feedBack.getContent()%></p>
-                <small class="float-right"><%= feedBack.getCreateAt()%></small>
+                <small class="float-right"><%= feedBack.getCreatedAt()%></small>
             </blockquote>
         </div>
     </div>
     <%}%>
 
 </div>
+
+<jsp:include page="fragment/client/footer.jsp"></jsp:include>
 
 <script>
     function doDelete(id) {
@@ -78,7 +79,7 @@
     }
 
 </script>
-<jsp:include page="fragment/client/footer.jsp"></jsp:include>
+
 </body>
 
 </html>
